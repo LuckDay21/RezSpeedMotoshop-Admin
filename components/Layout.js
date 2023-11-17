@@ -12,9 +12,9 @@ export default function Layout({ children }) {
       <div className="bg-bgGray w-screen h-screen flex flex-col items-center justify-center">
         <div className="mb-4">
           <Image
-            src="/img/rzm.png"
+            src="/img/rzm.jpeg"
             alt="RZM"
-            className="shadow-lg"
+            className="bg-white p-2 shadow-lg rounded-sm border border-gray-200"
             width={300}
             height={200}
           />
