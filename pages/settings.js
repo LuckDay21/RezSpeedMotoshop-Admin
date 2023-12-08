@@ -24,9 +24,9 @@ function SettingsPage({ swal }) {
     await axios.get("/api/settings?name=featuredProductId").then((res) => {
       setFeaturedProductId(res.data?.value);
     });
-    // await axios.get("/api/settings?name=shippingFee").then((res) => {
-    //   setShippingFee(res.data.value);
-    // });
+    await axios.get("/api/settings?name=shippingFee").then((res) => {
+      setShippingFee(res.data?.value);
+    });
   }
 
   async function saveSettings() {
@@ -35,10 +35,10 @@ function SettingsPage({ swal }) {
       name: "featuredProductId",
       value: featuredProductId,
     });
-    // await axios.put("/api/settings", {
-    //   name: "shippingFee",
-    //   value: shippingFee,
-    // });
+    await axios.put("/api/settings", {
+      name: "shippingFee",
+      value: shippingFee,
+    });
     setIsLoading(false);
     await swal.fire({
       title: "Settings saved!",
@@ -62,12 +62,12 @@ function SettingsPage({ swal }) {
                 <option value={product._id}>{product.title}</option>
               ))}
           </select>
-          {/* <label>Shipping price (in usd)</label>
+          <label>Shipping price (in idr)</label>
           <input
             type="number"
             value={shippingFee}
             onChange={(ev) => setShippingFee(ev.target.value)}
-          /> */}
+          />
           <div>
             <button onClick={saveSettings} className="btn-primary">
               Save settings
